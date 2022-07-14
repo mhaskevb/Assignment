@@ -19,12 +19,10 @@ public class VerificationServiceImpl implements VerificationService{
 
     private String generateQuestion(){
         Random random = new Random();
-        question = Question.builder()
-                .no1(random.nextInt(100))
-                .no2(random.nextInt(100))
-                .no3(random.nextInt(100))
-                .questionString("\"Please sum the numbers "+ question.getNo1()+" , "+ question.getNo2()+" , "+question.getNo3() +"\"")
-                .build();
+        question.setNo1(random.nextInt(100));
+        question.setNo2(random.nextInt(100));
+        question.setNo3(random.nextInt(100));
+        question.setQuestionString("\"Please sum the numbers "+ question.getNo1()+" , "+ question.getNo2()+" , "+question.getNo3() +"\"");
 
         return question.getQuestionString();
     }
